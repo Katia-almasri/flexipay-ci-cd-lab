@@ -53,6 +53,38 @@ Sample .gitlab-ci.yml
 
 ---
 
+## 🚀 CI/CD with Azure DevOps + Azure
+This project demonstrates a professional CI/CD pipeline using Azure DevOps to build a Docker image and deploy it to an Azure Virtual Machine, even in a restricted environment (e.g., CloudBox with limited Azure permissions).
+
+---
+## 🧱 CI/CD Pipeline Flow
+```bash
+1. Git push to main branch
+2. Azure DevOps pipeline is triggered
+3. Docker image is built on a hosted Azure agent
+4. Image is pushed to Azure Container Registry (ACR)
+5. Azure VM is accessed via SSH
+6. The container is pulled and deployed from ACR
+```
+
+---
+## ⚙️ Prerequisites
+Before using this pipeline, ensure the following are available:
+
+1. Azure DevOps project and repo
+2. Azure Container Registry (ACR)
+3. Azure Linux VM with Docker installed
+4. SSH access via uploaded private key
+5. Service connection manually created (if app registration is restricted)
+
+---
+## 🔐 Azure DevOps Setup
+1. Add the required secrets (variables) and upload the private SSH key
+2. Create the azure-pipelines.yml file or create one using the classic UI
+3. once the pipeline is done, you can test the endpoints using the defined endpoint on azure for this VM
+
+---
+
 ## 👥 Contributing
 
 Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change or enhance.
